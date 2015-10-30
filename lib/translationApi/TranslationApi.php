@@ -842,7 +842,7 @@ class TranslationApi
         if ($input !== null) {
 
             if (function_exists('curl_file_create')) {
-                $formParams['input'] = new \CurlFile($input->getRealPath(), "text/plain", "test.txt");
+                $formParams['input'] = new \CurlFile($input->getRealPath());
             }
             else
                 $formParams['input'] = '@' . $this->apiClient->getSerializer()->toFormValue($input);
