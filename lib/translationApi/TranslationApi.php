@@ -64,7 +64,7 @@ class TranslationApi
     {
         if ($apiClient == null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('https://localhost:8903');
+            $apiClient->getConfig()->setHost('https://platform.systran.net:8904');
         }
   
         $this->apiClient = $apiClient;
