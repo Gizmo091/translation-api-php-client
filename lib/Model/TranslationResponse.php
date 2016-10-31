@@ -32,7 +32,6 @@
  */
 
 namespace Systran\Client\Model;
-require_once(__DIR__ . '/../../vendor/autoload.php');
 
 use \ArrayAccess;
 /**
