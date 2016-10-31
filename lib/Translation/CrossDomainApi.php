@@ -31,7 +31,7 @@
  * Do not edit the class manually.
  */
 
-namespace Systran\Client;
+namespace Systran\Client\Translation;
 
 use \Systran\Client\Configuration;
 use \Systran\Client\ApiClient;

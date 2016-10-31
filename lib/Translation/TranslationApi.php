@@ -31,7 +31,7 @@
  * Do not edit the class manually.
  */
 
-namespace Systran\Client;
+namespace Systran\Client\Translation;
 
 use \Systran\Client\Configuration;
 use \Systran\Client\ApiClient;
@@ -64,7 +64,7 @@ class TranslationApi
     {
         if ($apiClient == null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('https://platform.systran.net:8904');
+            $apiClient->getConfig()->setHost('https://api-platform.systran.net');
         }
   
         $this->apiClient = $apiClient;
