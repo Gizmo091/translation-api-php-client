@@ -162,9 +162,9 @@ class ApiClient
         }
         // return the result on success, rather than just TRUE
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-  
+
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-  
+
         if (! empty($queryParams)) {
             $url = ($url . '?' . http_build_query($queryParams));
         }
@@ -193,7 +193,12 @@ class ApiClient
 
         // Set user agent
         curl_setopt($curl, CURLOPT_USERAGENT, $this->config->getUserAgent());
-  
+
+        // Allow for CA CERTIFICATES to be ignored -> https://curl.haxx.se/docs/sslcerts.html
+        if ($this->config->getStopCurlSSLVerify()) {
+          curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+        }
+
         // debugging for curl
         if ($this->config->getDebug()) {
             error_log("[DEBUG] HTTP Request body  ~BEGIN~\n".print_r($postData, true)."\n~END~\n", 3, $this->config->getDebugFile());
