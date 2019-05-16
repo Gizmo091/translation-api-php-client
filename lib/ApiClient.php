@@ -154,7 +154,10 @@ class ApiClient
         $url = $this->config->getHost() . $resourcePath;
   
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_SAFE_UPLOAD, false);
+        // Disable Safe Upload in php 7 ( no longer supported ) 
+        if(!class_exists("\CURLFile") && defined('CURLOPT_SAFE_UPLOAD')) {
+            curl_setopt($curl, CURLOPT_SAFE_UPLOAD, false);
+        }
 
         // set timeout, if needed
         if ($this->config->getCurlTimeout() != 0) {
