@@ -360,14 +360,14 @@ class TranslationApi
                 $e->setResponseObject($data);
                 break;
             }
-  
+
             throw $e;
         }
-        
+
         return null;
-        
+
     }
-    
+
     /**
      * translationFileBatchStatusGet
      *
@@ -380,12 +380,12 @@ class TranslationApi
      */
     public function translationFileBatchStatusGet($batch_id, $callback=null)
     {
-        
+
         // verify the required parameter 'batch_id' is set
         if ($batch_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $batch_id when calling translationFileBatchStatusGet');
         }
-  
+
         // parse inputs
         $resourcePath = "/translation/file/batch/status";
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -399,7 +399,7 @@ class TranslationApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array());
-  
+
         // query params
         if ($batch_id !== null) {
             $queryParams['batchId'] = $this->apiClient->getSerializer()->toQueryValue($batch_id);
@@ -407,32 +407,32 @@ class TranslationApi
         if ($callback !== null) {
             $queryParams['callback'] = $this->apiClient->getSerializer()->toQueryValue($callback);
         }
-        
-        
-        
-        
-  
+
+
+
+
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } else if (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
         if (isset($apiKey)) {
             $headerParams['Authorization'] = $apiKey;
         }
-        
-        
-        
+
+
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('key');
         if (isset($apiKey)) {
             $queryParams['key'] = $apiKey;
         }
-        
-        
-        
+
+
+
         // make the API Call
         try
         {
@@ -441,28 +441,28 @@ class TranslationApi
                 $queryParams, $httpBody,
                 $headerParams, '\Systran\Client\Model\BatchStatus'
             );
-            
+
             if (!$response) {
                 return null;
             }
 
             return $this->apiClient->getSerializer()->deserialize($response, '\Systran\Client\Model\BatchStatus', $httpHeader);
-            
+
         } catch (ApiException $e) {
-            switch ($e->getCode()) { 
+            switch ($e->getCode()) {
             case 200:
                 $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Systran\Client\Model\BatchStatus', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
-  
+
             throw $e;
         }
-        
+
         return null;
-        
+
     }
-    
+
     /**
      * translationFileCancelPost
      *
@@ -475,12 +475,12 @@ class TranslationApi
      */
     public function translationFileCancelPost($request_id, $callback=null)
     {
-        
+
         // verify the required parameter 'request_id' is set
         if ($request_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $request_id when calling translationFileCancelPost');
         }
-  
+
         // parse inputs
         $resourcePath = "/translation/file/cancel";
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -494,7 +494,7 @@ class TranslationApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array());
-  
+
         // query params
         if ($request_id !== null) {
             $queryParams['requestId'] = $this->apiClient->getSerializer()->toQueryValue($request_id);
@@ -502,32 +502,32 @@ class TranslationApi
         if ($callback !== null) {
             $queryParams['callback'] = $this->apiClient->getSerializer()->toQueryValue($callback);
         }
-        
-        
-        
-        
-  
+
+
+
+
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } else if (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
         if (isset($apiKey)) {
             $headerParams['Authorization'] = $apiKey;
         }
-        
-        
-        
+
+
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('key');
         if (isset($apiKey)) {
             $queryParams['key'] = $apiKey;
         }
-        
-        
-        
+
+
+
         // make the API Call
         try
         {
@@ -536,28 +536,28 @@ class TranslationApi
                 $queryParams, $httpBody,
                 $headerParams, '\Systran\Client\Model\TranslationCancel'
             );
-            
+
             if (!$response) {
                 return null;
             }
 
             return $this->apiClient->getSerializer()->deserialize($response, '\Systran\Client\Model\TranslationCancel', $httpHeader);
-            
+
         } catch (ApiException $e) {
-            switch ($e->getCode()) { 
+            switch ($e->getCode()) {
             case 200:
                 $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Systran\Client\Model\TranslationCancel', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
-  
+
             throw $e;
         }
-        
+
         return null;
-        
+
     }
-    
+
     /**
      * translationFileResultGet
      *
@@ -570,12 +570,12 @@ class TranslationApi
      */
     public function translationFileResultGet($request_id, $callback=null)
     {
-        
+
         // verify the required parameter 'request_id' is set
         if ($request_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $request_id when calling translationFileResultGet');
         }
-  
+
         // parse inputs
         $resourcePath = "/translation/file/result";
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -589,7 +589,7 @@ class TranslationApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array());
-  
+
         // query params
         if ($request_id !== null) {
             $queryParams['requestId'] = $this->apiClient->getSerializer()->toQueryValue($request_id);
@@ -597,32 +597,32 @@ class TranslationApi
         if ($callback !== null) {
             $queryParams['callback'] = $this->apiClient->getSerializer()->toQueryValue($callback);
         }
-        
-        
-        
-        
-  
+
+
+
+
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } else if (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
         if (isset($apiKey)) {
             $headerParams['Authorization'] = $apiKey;
         }
-        
-        
-        
+
+
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('key');
         if (isset($apiKey)) {
             $queryParams['key'] = $apiKey;
         }
-        
-        
-        
+
+
+
         // make the API Call
         try
         {
@@ -631,28 +631,28 @@ class TranslationApi
                 $queryParams, $httpBody,
                 $headerParams, '\Systran\Client\Model\TranslationFileResponse'
             );
-            
+
             if (!$response) {
                 return null;
             }
 
             return $this->apiClient->getSerializer()->deserialize($response, '\Systran\Client\Model\TranslationFileResponse', $httpHeader);
-            
+
         } catch (ApiException $e) {
-            switch ($e->getCode()) { 
+            switch ($e->getCode()) {
             case 200:
                 $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Systran\Client\Model\TranslationFileResponse', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
-  
+
             throw $e;
         }
-        
+
         return null;
-        
+
     }
-    
+
     /**
      * translationFileStatusGet
      *
@@ -665,12 +665,12 @@ class TranslationApi
      */
     public function translationFileStatusGet($request_id, $callback=null)
     {
-        
+
         // verify the required parameter 'request_id' is set
         if ($request_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $request_id when calling translationFileStatusGet');
         }
-  
+
         // parse inputs
         $resourcePath = "/translation/file/status";
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -684,7 +684,7 @@ class TranslationApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array());
-  
+
         // query params
         if ($request_id !== null) {
             $queryParams['requestId'] = $this->apiClient->getSerializer()->toQueryValue($request_id);
@@ -692,32 +692,32 @@ class TranslationApi
         if ($callback !== null) {
             $queryParams['callback'] = $this->apiClient->getSerializer()->toQueryValue($callback);
         }
-        
-        
-        
-        
-  
+
+
+
+
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
         } else if (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
         if (isset($apiKey)) {
             $headerParams['Authorization'] = $apiKey;
         }
-        
-        
-        
+
+
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('key');
         if (isset($apiKey)) {
             $queryParams['key'] = $apiKey;
         }
-        
-        
-        
+
+
+
         // make the API Call
         try
         {
@@ -726,28 +726,28 @@ class TranslationApi
                 $queryParams, $httpBody,
                 $headerParams, '\Systran\Client\Model\TranslationStatus'
             );
-            
+
             if (!$response) {
                 return null;
             }
 
             return $this->apiClient->getSerializer()->deserialize($response, '\Systran\Client\Model\TranslationStatus', $httpHeader);
-            
+
         } catch (ApiException $e) {
-            switch ($e->getCode()) { 
+            switch ($e->getCode()) {
             case 200:
                 $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Systran\Client\Model\TranslationStatus', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
-  
+
             throw $e;
         }
-        
+
         return null;
-        
+
     }
-    
+
     /**
      * translationFileTranslatePost
      *
@@ -770,9 +770,9 @@ class TranslationApi
      * @return \Systran\Client\Model\TranslationFileResponse
      * @throws \Systran\Client\ApiException on non-2xx response
      */
-    public function translationFileTranslatePost($input, $target, $source=null, $format=null, $profile=null, $with_source=null, $with_annotations=null, $with_dictionary=null, $with_corpus=null, $options=null, $encoding=null, $async=null, $batch_id=null, $callback=null)
-    {
-        error_log($input);
+    public function translationFileTranslatePost($input, $target, $source = null, $format = null, $profile = null, $with_source = null, $with_annotations = null, $with_dictionary = null, $with_corpus = null, $options = null, $encoding = null, $async = false, $batch_id = null, $callback = null) {
+//        die('ici');
+//        error_log($input);
         // verify the required parameter 'input' is set
         if ($input === null) {
             throw new \InvalidArgumentException('Missing the required parameter $input when calling translationFileTranslatePost');
@@ -781,7 +781,7 @@ class TranslationApi
         if ($target === null) {
             throw new \InvalidArgumentException('Missing the required parameter $target when calling translationFileTranslatePost');
         }
-  
+
         // parse inputs
         $resourcePath = "/translation/file/translate";
         $resourcePath = str_replace("{format}", "json", $resourcePath);
@@ -795,7 +795,7 @@ class TranslationApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('*/*','','*/*'));
-  
+
         // query params
         if ($source !== null) {
             $queryParams['source'] = $this->apiClient->getSerializer()->toQueryValue($source);
@@ -827,27 +827,27 @@ class TranslationApi
         if ($encoding !== null) {
             $queryParams['encoding'] = $this->apiClient->getSerializer()->toQueryValue($encoding);
         }// query params
-        if ($async !== null) {
-            $queryParams['async'] = $this->apiClient->getSerializer()->toQueryValue($async);
-        }// query params
+        //        if ($async !== null) {
+        //            $queryParams['async'] = $this->apiClient->getSerializer()->toQueryValue($async);
+        //        }// query params
         if ($batch_id !== null) {
             $queryParams['batchId'] = $this->apiClient->getSerializer()->toQueryValue($batch_id);
         }// query params
         if ($callback !== null) {
             $queryParams['callback'] = $this->apiClient->getSerializer()->toQueryValue($callback);
         }
-        
-        
+
+
         // form params
         if ($input !== null) {
 
             if (function_exists('curl_file_create')) {
                 $formParams['input'] = new \CurlFile($input->getRealPath());
             }
-            else
-                $formParams['input'] = '@' . $this->apiClient->getSerializer()->toFormValue($input);
-            $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array('multipart/form-data','','*/*'));
-
+            else {
+                $formParams['input'] = '@'.$this->apiClient->getSerializer()->toFormValue($input);
+            }
+            $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(['multipart/form-data']);
         }
         //error_log($formParams['input']);
 
@@ -858,21 +858,21 @@ class TranslationApi
         } else if (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
-        
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
         if (isset($apiKey)) {
             $headerParams['Authorization'] = $apiKey;
         }
-        
-        
-        
+
+
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('key');
         if (isset($apiKey)) {
             $queryParams['key'] = $apiKey;
         }
-        
-        
-        
+
+
+
         // make the API Call
         try
         {
@@ -881,246 +881,241 @@ class TranslationApi
                 $queryParams, $httpBody,
                 $headerParams, '\Systran\Client\Model\TranslationFileResponse'
             );
-            
+
             if (!$response) {
                 return null;
             }
 
-            return $this->apiClient->getSerializer()->deserialize($response, '\Systran\Client\Model\TranslationFileResponse', $httpHeader);
-            
-        } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Systran\Client\Model\TranslationFileResponse', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
+            if (false === $async && null === json_decode($response)) {
+                return $response;
+            };
+
+            return $this->apiClient->getSerializer()
+                ->deserialize($response, '\Systran\Client\Model\TranslationFileResponse', $httpHeader);
+        }
+        catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()
+                        ->deserialize($e->getResponseBody(), '\Systran\Client\Model\TranslationFileResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
             }
-  
+
             throw $e;
         }
-        
+
         return null;
-        
     }
-    
+
     /**
      * translationProfileGet
      *
      * List of profiles
      *
-     * @param string $source Source language code of the profile (optional)
-     * @param string $target Target Language code of the profile (optional)
-     * @param int[] $id Identifier of the profile (optional)
+     * @param string $source   Source language code of the profile (optional)
+     * @param string $target   Target Language code of the profile (optional)
+     * @param int[]  $id       Identifier of the profile (optional)
      * @param string $callback Javascript callback function name for JSONP Support (optional)
+     *
      * @return \Systran\Client\Model\ProfilesResponse
      * @throws \Systran\Client\ApiException on non-2xx response
      */
-    public function translationProfileGet($source=null, $target=null, $id=null, $callback=null)
-    {
-        
-  
+    public function translationProfileGet($source = null, $target = null, $id = null, $callback = null) {
         // parse inputs
-        $resourcePath = "/translation/profile";
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-        $method = "GET";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        $resourcePath   = "/translation/profile";
+        $resourcePath   = str_replace("{format}", "json", $resourcePath);
+        $method         = "GET";
+        $httpBody       = '';
+        $queryParams    = [];
+        $headerParams   = [];
+        $formParams     = [];
+        $_header_accept = ApiClient::selectHeaderAccept(['application/json']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array());
-  
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType([]);
+
         // query params
         if ($source !== null) {
-            $queryParams['source'] = $this->apiClient->getSerializer()->toQueryValue($source);
+            $queryParams['source'] = $this->apiClient->getSerializer()
+                ->toQueryValue($source);
         }// query params
         if ($target !== null) {
-            $queryParams['target'] = $this->apiClient->getSerializer()->toQueryValue($target);
+            $queryParams['target'] = $this->apiClient->getSerializer()
+                ->toQueryValue($target);
         }// query params
         if ($id !== null) {
-            $queryParams['id'] = $this->apiClient->getSerializer()->toQueryValue($id);
+            $queryParams['id'] = $this->apiClient->getSerializer()
+                ->toQueryValue($id);
         }// query params
         if ($callback !== null) {
-            $queryParams['callback'] = $this->apiClient->getSerializer()->toQueryValue($callback);
+            $queryParams['callback'] = $this->apiClient->getSerializer()
+                ->toQueryValue($callback);
         }
-        
-        
-        
-        
-  
+
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } else if (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
+        }
+        else {
+            if (count($formParams) > 0) {
+                $httpBody = $formParams; // for HTTP post (form)
+            }
         }
 
         $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
         if (isset($apiKey)) {
             $headerParams['Authorization'] = $apiKey;
         }
-        
-        
-        
+
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('key');
         if (isset($apiKey)) {
             $queryParams['key'] = $apiKey;
         }
-        
-        
-        
+
+
         // make the API Call
-        try
-        {
-            list($response, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, $method,
-                $queryParams, $httpBody,
-                $headerParams, '\Systran\Client\Model\ProfilesResponse'
-            );
-            
+        try {
+            list($response, $httpHeader) = $this->apiClient->callApi($resourcePath, $method, $queryParams, $httpBody, $headerParams, '\Systran\Client\Model\ProfilesResponse');
+
             if (!$response) {
                 return null;
             }
 
-            return $this->apiClient->getSerializer()->deserialize($response, '\Systran\Client\Model\ProfilesResponse', $httpHeader);
-            
-        } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Systran\Client\Model\ProfilesResponse', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
+            return $this->apiClient->getSerializer()
+                ->deserialize($response, '\Systran\Client\Model\ProfilesResponse', $httpHeader);
+        }
+        catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()
+                        ->deserialize($e->getResponseBody(), '\Systran\Client\Model\ProfilesResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
             }
-  
+
             throw $e;
         }
-        
+
         return null;
-        
     }
-    
+
     /**
      * translationSupportedLanguagesGet
      *
      * Supported Languages
      *
-     * @param string[] $source Language code of the source text (optional)
-     * @param string[] $target Language code into which to translate the source text (optional)
-     * @param string $callback Javascript callback function name for JSONP Support (optional)
+     * @param string[] $source   Language code of the source text (optional)
+     * @param string[] $target   Language code into which to translate the source text (optional)
+     * @param string   $callback Javascript callback function name for JSONP Support (optional)
+     *
      * @return \Systran\Client\Model\SupportedLanguageResponse
      * @throws \Systran\Client\ApiException on non-2xx response
      */
-    public function translationSupportedLanguagesGet($source=null, $target=null, $callback=null)
-    {
-        
-  
+    public function translationSupportedLanguagesGet($source = null, $target = null, $callback = null) {
         // parse inputs
-        $resourcePath = "/translation/supportedLanguages";
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-        $method = "GET";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        $resourcePath   = "/translation/supportedLanguages";
+        $resourcePath   = str_replace("{format}", "json", $resourcePath);
+        $method         = "GET";
+        $httpBody       = '';
+        $queryParams    = [];
+        $headerParams   = [];
+        $formParams     = [];
+        $_header_accept = ApiClient::selectHeaderAccept(['application/json']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array());
-  
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType([]);
+
         // query params
         if ($source !== null) {
-            $queryParams['source'] = $this->apiClient->getSerializer()->toQueryValue($source);
+            $queryParams['source'] = $this->apiClient->getSerializer()
+                ->toQueryValue($source);
         }// query params
         if ($target !== null) {
-            $queryParams['target'] = $this->apiClient->getSerializer()->toQueryValue($target);
+            $queryParams['target'] = $this->apiClient->getSerializer()
+                ->toQueryValue($target);
         }// query params
         if ($callback !== null) {
-            $queryParams['callback'] = $this->apiClient->getSerializer()->toQueryValue($callback);
+            $queryParams['callback'] = $this->apiClient->getSerializer()
+                ->toQueryValue($callback);
         }
-        
-        
-        
-        
-  
+
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } else if (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
         }
-        
+        else {
+            if (count($formParams) > 0) {
+                $httpBody = $formParams; // for HTTP post (form)
+            }
+        }
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
         if (isset($apiKey)) {
             $headerParams['Authorization'] = $apiKey;
         }
-        
-        
-        
+
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('key');
         if (isset($apiKey)) {
             $queryParams['key'] = $apiKey;
         }
-        
-        
-        
+
+
         // make the API Call
-        try
-        {
-            list($response, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, $method,
-                $queryParams, $httpBody,
-                $headerParams, '\Systran\Client\Model\SupportedLanguageResponse'
-            );
-            
+        try {
+            list($response, $httpHeader) = $this->apiClient->callApi($resourcePath, $method, $queryParams, $httpBody, $headerParams, '\Systran\Client\Model\SupportedLanguageResponse');
+
             if (!$response) {
                 return null;
             }
 
-            return $this->apiClient->getSerializer()->deserialize($response, '\Systran\Client\Model\SupportedLanguageResponse', $httpHeader);
-            
-        } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Systran\Client\Model\SupportedLanguageResponse', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
+            return $this->apiClient->getSerializer()
+                ->deserialize($response, '\Systran\Client\Model\SupportedLanguageResponse', $httpHeader);
+        }
+        catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()
+                        ->deserialize($e->getResponseBody(), '\Systran\Client\Model\SupportedLanguageResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
             }
-  
+
             throw $e;
         }
-        
+
         return null;
-        
     }
-    
+
     /**
      * translationTextTranslatePost
      *
      * Translate
      *
-     * @param string[] $input Input text (this parameter can be repeated) (required)
-     * @param string $target Target language code ([details](#description_langage_code_values)) (required)
-     * @param string $source Source language code ([details](#description_langage_code_values)) or `auto`.\n\nWhen the value is set to `auto`, the language will be automatically detected, used to enhance the translation, and returned in output. (optional)
-     * @param string $format Format of the source text.\n\nValid values are `text` for plain text, `html` for HTML pages, and `auto` for automatic detection. The MIME type of file format supported by SYSTRAN can also be used (application/vnd.openxmlformats, application/vnd.oasis.opendocument, ...) (optional)
-     * @param int $profile Profile id (optional)
-     * @param bool $with_source If `true`, the source will also be sent back in the response message. It can be useful when used with the withAnnotations option to align the source document with the translated document (optional)
-     * @param bool $with_annotations If `true`, different annotations will be provided in the translated document. If the option &#39;withSource&#39; is used, the annotations will also be provided in the source document. It will provide segments, tokens, not found words,... (optional)
-     * @param string $with_dictionary User Dictionary or/and Normalization Dictionary ids to be applied to the translation result. Each dictionary &#39;id&#39; has to be separate by a comma. (optional)
-     * @param string $with_corpus Corpus to be applied to the translation result. Each corpus &#39;id&#39; has to be separate by a comma. (optional)
-     * @param bool $back_translation If `true`, the translated text will be translated back in source language (optional)
-     * @param string[] $options Additional options.\n\nAn option can be a JSON object containing a set of key/value generic options supported by the translator. It can also be a string with the syntax &#39;&lt;key&gt;:&lt;value&gt;&#39; to pass a key/value generic option to the translator. (optional)
-     * @param string $encoding Encoding. `base64` can be useful to send binary documents in the JSON body. Please note that another alternative is to use translateFile (optional)
-     * @param string $callback Javascript callback function name for JSONP Support (optional)
+     * @param string[] $input            Input text (this parameter can be repeated) (required)
+     * @param string   $target           Target language code ([details](#description_langage_code_values)) (required)
+     * @param string   $source           Source language code ([details](#description_langage_code_values)) or `auto`.\n\nWhen the value is set to `auto`, the language will be automatically detected, used to enhance the translation, and returned in output. (optional)
+     * @param string   $format           Format of the source text.\n\nValid values are `text` for plain text, `html` for HTML pages, and `auto` for automatic detection. The MIME type of file format supported by SYSTRAN can also be used (application/vnd.openxmlformats, application/vnd.oasis.opendocument, ...) (optional)
+     * @param int      $profile          Profile id (optional)
+     * @param bool     $with_source      If `true`, the source will also be sent back in the response message. It can be useful when used with the withAnnotations option to align the source document with the translated document (optional)
+     * @param bool     $with_annotations If `true`, different annotations will be provided in the translated document. If the option &#39;withSource&#39; is used, the annotations will also be provided in the source document. It will provide segments, tokens, not found words,... (optional)
+     * @param string   $with_dictionary  User Dictionary or/and Normalization Dictionary ids to be applied to the translation result. Each dictionary &#39;id&#39; has to be separate by a comma. (optional)
+     * @param string   $with_corpus      Corpus to be applied to the translation result. Each corpus &#39;id&#39; has to be separate by a comma. (optional)
+     * @param bool     $back_translation If `true`, the translated text will be translated back in source language (optional)
+     * @param string[] $options          Additional options.\n\nAn option can be a JSON object containing a set of key/value generic options supported by the translator. It can also be a string with the syntax &#39;&lt;key&gt;:&lt;value&gt;&#39; to pass a key/value generic option to the translator. (optional)
+     * @param string   $encoding         Encoding. `base64` can be useful to send binary documents in the JSON body. Please note that another alternative is to use translateFile (optional)
+     * @param string   $callback         Javascript callback function name for JSONP Support (optional)
+     *
      * @return \Systran\Client\Model\TranslationResponse
      * @throws \Systran\Client\ApiException on non-2xx response
      */
-    public function translationTextTranslatePost($input, $target, $source=null, $format=null, $profile=null, $with_source=null, $with_annotations=null, $with_dictionary=null, $with_corpus=null, $back_translation=null, $options=null, $encoding=null, $callback=null)
-    {
-        
+    public function translationTextTranslatePost($input, $target, $source = null, $format = null, $profile = null, $with_source = null, $with_annotations = null, $with_dictionary = null, $with_corpus = null, $back_translation = null, $options = null, $encoding = null, $callback = null) {
         // verify the required parameter 'input' is set
         if ($input === null) {
             throw new \InvalidArgumentException('Missing the required parameter $input when calling translationTextTranslatePost');
@@ -1129,115 +1124,122 @@ class TranslationApi
         if ($target === null) {
             throw new \InvalidArgumentException('Missing the required parameter $target when calling translationTextTranslatePost');
         }
-  
+
         // parse inputs
-        $resourcePath = "/translation/text/translate";
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-        $method = "POST";
-        $httpBody = '';
-        $queryParams = array();
-        $headerParams = array();
-        $formParams = array();
-        $_header_accept = ApiClient::selectHeaderAccept(array('application/json'));
+        $resourcePath   = "/translation/text/translate";
+        $resourcePath   = str_replace("{format}", "json", $resourcePath);
+        $method         = "POST";
+        $httpBody       = '';
+        $queryParams    = [];
+        $headerParams   = [];
+        $formParams     = [];
+        $_header_accept = ApiClient::selectHeaderAccept(['application/json']);
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType(array());
-  
+        $headerParams['Content-Type'] = ApiClient::selectHeaderContentType([]);
+
         // query params
         if ($input !== null) {
-            $queryParams['input'] = $this->apiClient->getSerializer()->toQueryValue($input);
+            $queryParams['input'] = $this->apiClient->getSerializer()
+                ->toQueryValue($input);
         }// query params
         if ($source !== null) {
-            $queryParams['source'] = $this->apiClient->getSerializer()->toQueryValue($source);
+            $queryParams['source'] = $this->apiClient->getSerializer()
+                ->toQueryValue($source);
         }// query params
         if ($target !== null) {
-            $queryParams['target'] = $this->apiClient->getSerializer()->toQueryValue($target);
+            $queryParams['target'] = $this->apiClient->getSerializer()
+                ->toQueryValue($target);
         }// query params
         if ($format !== null) {
-            $queryParams['format'] = $this->apiClient->getSerializer()->toQueryValue($format);
+            $queryParams['format'] = $this->apiClient->getSerializer()
+                ->toQueryValue($format);
         }// query params
         if ($profile !== null) {
-            $queryParams['profile'] = $this->apiClient->getSerializer()->toQueryValue($profile);
+            $queryParams['profile'] = $this->apiClient->getSerializer()
+                ->toQueryValue($profile);
         }// query params
         if ($with_source !== null) {
-            $queryParams['withSource'] = $this->apiClient->getSerializer()->toQueryValue($with_source);
+            $queryParams['withSource'] = $this->apiClient->getSerializer()
+                ->toQueryValue($with_source);
         }// query params
         if ($with_annotations !== null) {
-            $queryParams['withAnnotations'] = $this->apiClient->getSerializer()->toQueryValue($with_annotations);
+            $queryParams['withAnnotations'] = $this->apiClient->getSerializer()
+                ->toQueryValue($with_annotations);
         }// query params
         if ($with_dictionary !== null) {
-            $queryParams['withDictionary'] = $this->apiClient->getSerializer()->toQueryValue($with_dictionary);
+            $queryParams['withDictionary'] = $this->apiClient->getSerializer()
+                ->toQueryValue($with_dictionary);
         }// query params
         if ($with_corpus !== null) {
-            $queryParams['withCorpus'] = $this->apiClient->getSerializer()->toQueryValue($with_corpus);
+            $queryParams['withCorpus'] = $this->apiClient->getSerializer()
+                ->toQueryValue($with_corpus);
         }// query params
         if ($back_translation !== null) {
-            $queryParams['backTranslation'] = $this->apiClient->getSerializer()->toQueryValue($back_translation);
+            $queryParams['backTranslation'] = $this->apiClient->getSerializer()
+                ->toQueryValue($back_translation);
         }// query params
         if ($options !== null) {
-            $queryParams['options'] = $this->apiClient->getSerializer()->toQueryValue($options);
+            $queryParams['options'] = $this->apiClient->getSerializer()
+                ->toQueryValue($options);
         }// query params
         if ($encoding !== null) {
-            $queryParams['encoding'] = $this->apiClient->getSerializer()->toQueryValue($encoding);
+            $queryParams['encoding'] = $this->apiClient->getSerializer()
+                ->toQueryValue($encoding);
         }// query params
         if ($callback !== null) {
-            $queryParams['callback'] = $this->apiClient->getSerializer()->toQueryValue($callback);
+            $queryParams['callback'] = $this->apiClient->getSerializer()
+                ->toQueryValue($callback);
         }
-        
-        
-        
-        
-  
+
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } else if (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
         }
-        
+        else {
+            if (count($formParams) > 0) {
+                $httpBody = $formParams; // for HTTP post (form)
+            }
+        }
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('Authorization');
         if (isset($apiKey)) {
             $headerParams['Authorization'] = $apiKey;
         }
-        
-        
-        
+
+
         $apiKey = $this->apiClient->getApiKeyWithPrefix('key');
         if (isset($apiKey)) {
             $queryParams['key'] = $apiKey;
         }
-        
-        
-        
+
+
         // make the API Call
-        try
-        {
-            list($response, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, $method,
-                $queryParams, $httpBody,
-                $headerParams, '\Systran\Client\Model\TranslationResponse'
-            );
-            
+        try {
+            list($response, $httpHeader) = $this->apiClient->callApi($resourcePath, $method, $queryParams, $httpBody, $headerParams, '\Systran\Client\Model\TranslationResponse');
+
             if (!$response) {
                 return null;
             }
 
-            return $this->apiClient->getSerializer()->deserialize($response, '\Systran\Client\Model\TranslationResponse', $httpHeader);
-            
-        } catch (ApiException $e) {
-            switch ($e->getCode()) { 
-            case 200:
-                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Systran\Client\Model\TranslationResponse', $e->getResponseHeaders());
-                $e->setResponseObject($data);
-                break;
+            return $this->apiClient->getSerializer()
+                ->deserialize($response, '\Systran\Client\Model\TranslationResponse', $httpHeader);
+        }
+        catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()
+                        ->deserialize($e->getResponseBody(), '\Systran\Client\Model\TranslationResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
             }
-  
+
             throw $e;
         }
-        
+
         return null;
-        
     }
-    
+
 }
